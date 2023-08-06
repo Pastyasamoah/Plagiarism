@@ -174,7 +174,7 @@ class Reference
 
 
 
-	public function Citations()
+	public function CitationsArray()
 
 	{
 
@@ -184,8 +184,32 @@ class Reference
 
 		return $Result;
 
+	}
+
+
+
+	public function CitationsText()
+
+	{
+
+		$Result = "";
+
+		foreach( $this->CitationsArray() as $citation )
+
+		{
+
+			$Result = $Result.$citation."; ";
+
+		}
+
+		$Result = ltrim($Result, ";");
+		
+		return rtrim($Result, ";");
 
 	}
+
+
+
 
 
 
